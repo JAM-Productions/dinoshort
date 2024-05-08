@@ -50,3 +50,23 @@ npm run format
 ```bash
 npm run check-format
 ```
+
+## Testing
+
+### Using the terminal
+
+Run the following command:
+
+```sh
+npm run cypress
+```
+
+### Using the UI
+
+Start running the command below:
+```sh
+npx cypress open
+```
+1. Then select the type of testing (in our case, it's E2E).
+2. Select where the tests will run. We recommend using Chrome.
+3. Open the specs tab and open the file `index.cy.js`; this will test the entire application.
