@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write 'src/'",
-    "check-format": "prettier --check 'src/'"
+    "check-format": "prettier --check 'src/'",
+    "cypress": "npx cypress run"
   },
   "dependencies": {
     "@astrojs/check": "^0.6.0",
@@ -17,6 +18,7 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "cypress": "^13.8.1",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0"
   }

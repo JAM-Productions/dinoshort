@@ -1,0 +1,36 @@
+name: Cypress Tests
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        strategy:
+          max-parallel: 4
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  cache: "npm"
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Init
+              run: npm run dev &
+
+            - name: Wait for website to be ready
+              run: sleep 10
+
+            - name: Run Cypress tests
+              run: npm run cypress
