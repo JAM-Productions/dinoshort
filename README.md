@@ -1,6 +1,6 @@
 # DinoShort
 
-a url shortener
+an url shortener
 
 ## 🚀 Project Structure
 
@@ -58,7 +58,7 @@ npm run check-format
 Run the following command:
 
 ```sh
-npm run cypress
+npm run test
 ```
 
 ### Using the UI

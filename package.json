@@ -10,7 +10,7 @@
     "astro": "astro",
     "format": "prettier --write 'src/'",
     "check-format": "prettier --check 'src/'",
-    "cypress": "npx cypress run"
+    "test": "npx cypress run"
   },
   "dependencies": {
     "@astrojs/check": "^0.6.0",
