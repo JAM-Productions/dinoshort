@@ -2,6 +2,14 @@
 
 an url shortener
 
+## Design
+
+The proposed design is the following:
+
+![design](/design/design.png)
+
+We will use Redis as a key-value store to store the shortened URLs.
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
