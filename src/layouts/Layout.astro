@@ -10,7 +10,10 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+    lang="en"
+    class=""
+>
     <head>
         <meta charset="UTF-8" />
         <meta
@@ -31,15 +34,24 @@ const { title } = Astro.props;
             content={Astro.generator}
         />
         <title>{title}</title>
+        <script>
+            if (
+                typeof localStorage !== "undefined" &&
+                localStorage.getItem("darkMode") === "true"
+            ) {
+                document.documentElement.classList.add("dark");
+            }
+        </script>
     </head>
-    <body>
+    <body class="bg-gray-100 dark:bg-gray-900">
         <div class="flex justify-end p-4">
             <ThemeSwitch client:only="react" />
         </div>
         <slot />
+        <Footer />
     </body>
-    <Footer />
 </html>
+
 <style is:global>
     :root {
         --accent: 136, 58, 234;
@@ -57,10 +69,7 @@ const { title } = Astro.props;
         background-size: 224px;
     }
     body {
-        @apply bg-gray-100 text-black transition-colors duration-300;
-    }
-    body.dark {
-        @apply bg-gray-900 text-white;
+        @apply transition-colors duration-300;
     }
     code {
         font-family:
